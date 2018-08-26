@@ -5,10 +5,13 @@ const express = require('express')
 // Declaring Server Variables
 const app = new express()
 
+// Adding port flag
+const port = process.env.PORT||3000
+
 // Settingup static content directory
 app.use(express.static(path.join(__dirname, '../public')))
 
 // Poweringup Server
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('App up and running!');
 })
